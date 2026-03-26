@@ -6,7 +6,7 @@ st.set_page_config(page_title="Retail Dashboard", layout="wide")
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("lulu_data.csv")
+    df = pd.read_csv("lulu_uae_master_2000.csv")
     df['order_date'] = pd.to_datetime(df['order_dat'], errors='coerce')
     return df
 
