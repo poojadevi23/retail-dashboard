@@ -12,7 +12,7 @@ def load_data():
 
 df = load_data()
 
-st.title("📊 Retail Analytics Dashboard")
+st.title(" Retail Analytics Dashboard")
 
 st.sidebar.header("Filters")
 
@@ -42,7 +42,7 @@ col3.metric("Avg Order Value", f"{avg_order_value:,.2f}")
 st.markdown("---")
 sales_trend = filtered_df.groupby("order_date")["line_value"].sum().reset_index()
 fig1 = px.line(sales_trend, x="order_date", y="line_value", title="Sales Trend")
-st.plotly_chart(fig1, use_container_width=True
+st.plotly_chart(fig1, use_container_width=True)
 city_sales = filtered_df.groupby("city")["line_value"].sum().reset_index()
 fig2 = px.bar(city_sales, x="city", y="line_value", title="City Sales")
 st.plotly_chart(fig2, use_container_width=True)
